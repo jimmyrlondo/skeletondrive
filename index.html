@@ -1,272 +1,87 @@
-:root {
-  --bg: #090800;
-  --bg-2: #1a1700;
-  --panel: #221d02;
-  --text: #fffde8;
-  --muted: #efe58a;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skeleton Drive — The Great Yellowing</title>
+  <meta name="description" content="Official website for Skeleton Drive and the album The Great Yellowing." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero" id="top">
+    <nav class="nav">
+      <a class="brand" href="#top">Skeleton Drive</a>
+      <div class="nav-links">
+        <a href="#about">Bio</a>
+        <a href="#music">Music</a>
+        <a href="#tour">Tour</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
 
-  --accent: #CCCC29;
-  --accent-bright: #fff460;
-  --accent-hot: #fff98a;
-  --line: rgba(255, 244, 96, 0.45);
+    <div class="hero-content container">
+      <h1>The Great Yellowing</h1>
+      <p class="lead">New release from Skeleton Drive.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#music">Listen Now</a>
+        <a class="btn btn-outline" href="#tour">See Tour</a>
+      </div>
+    </div>
 
-  --maxw: 1080px;
-}
+    <div class="hero-image-wrap">
+      <img src="skellyhero.jpeg" alt="Skeleton Drive hero image" class="hero-image contain-hero" />
+      <div class="hero-overlay"></div>
+      <div class="grain"></div>
+    </div>
+  </header>
 
-* { box-sizing: border-box; }
+  <main>
+    <section id="about" class="section container">
+      <h2>Artist Bio</h2>
+      <p>Skeleton Drive is the indie music project of NE Ohio musician Dillon Rae Oliver, blending elements of folk music, emo, punk, and pop into a cathartic blend of so-called “folk-emo”.</p>
+    </section>
 
-html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-  color: var(--text);
-  scroll-behavior: smooth;
-  background:
-    radial-gradient(circle at 12% -5%, rgba(255, 244, 96, 0.40) 0%, rgba(255, 244, 96, 0.12) 32%, transparent 62%),
-    radial-gradient(circle at 88% 8%, rgba(204, 204, 41, 0.28) 0%, transparent 45%),
-    linear-gradient(180deg, var(--bg-2), var(--bg) 30%, #070600 100%);
-}
+    <section id="music" class="section section-alt">
+      <div class="container">
+        <h2>Latest Release</h2>
+        <article class="card album-card">
+          <a class="album-link" href="https://skeletondrive.bandcamp.com/album/the-great-yellowing" target="_blank" rel="noopener noreferrer">
+            <img src="greatyellowing.jpg" alt="The Great Yellowing album art" class="album-thumb" />
+          </a>
+          <div class="album-copy">
+            <p class="eyebrow">Album</p>
+            <h3>The Great Yellowing</h3>
+            <a class="text-link" href="https://skeletondrive.bandcamp.com/album/the-great-yellowing" target="_blank" rel="noopener noreferrer">Open on Bandcamp →</a>
+          </div>
+        </article>
+      </div>
+    </section>
 
-a {
-  color: var(--accent-bright);
-  text-decoration: none;
-}
-a:hover { text-decoration: underline; }
+    <section id="tour" class="section container">
+      <h2>Tour</h2>
+      <div class="tour-wrap">
+        <img src="skellytour.jpg" alt="Skeleton Drive tour poster" class="tour-image" />
+      </div>
+    </section>
 
-.container {
-  width: min(100% - 2rem, var(--maxw));
-  margin-inline: auto;
-}
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <h2>Contact</h2>
+        <ul class="contact-list">
+          <li><strong>Email:</strong> <a href="mailto:skeletondrive@gmail.com">skeletondrive@gmail.com</a></li>
+          <li><strong>Instagram:</strong> <a href="https://www.instagram.com/skeletondrive" target="_blank" rel="noopener noreferrer">@skeletondrive</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
 
-.hero {
-  position: relative;
-  min-height: 95vh;
-  overflow: hidden;
-  border-bottom: 1px solid var(--line);
-  box-shadow:
-    inset 0 -120px 140px rgba(204, 204, 41, 0.16),
-    0 0 80px rgba(255, 244, 96, 0.08);
-}
+  <footer class="footer">
+    <p>© <span id="year"></span> Skeleton Drive. All rights reserved.</p>
+  </footer>
 
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 30;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.95rem 1.25rem;
-  backdrop-filter: blur(12px);
-  background: rgba(9, 8, 0, 0.66);
-  border-bottom: 1px solid rgba(255, 244, 96, 0.28);
-}
-
-.brand {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--text);
-}
-
-.nav-links {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.nav-links a {
-  color: var(--text);
-  opacity: 0.94;
-}
-
-.hero-content {
-  padding-top: 13vh;
-  padding-bottom: 4.5rem;
-  position: relative;
-  z-index: 4;
-}
-
-h1, h2, h3 {
-  font-family: 'Space Grotesk', 'Inter', sans-serif;
-  margin: 0 0 .8rem;
-  line-height: 1.04;
-}
-
-h1 {
-  font-size: clamp(2.8rem, 9.2vw, 6.4rem);
-  max-width: 11ch;
-  text-shadow:
-    0 0 16px rgba(255, 244, 96, .45),
-    0 0 34px rgba(255, 244, 96, .32);
-}
-
-h2 {
-  font-size: clamp(1.8rem, 3.3vw, 2.7rem);
-  text-shadow: 0 0 16px rgba(255, 244, 96, .22);
-}
-
-.lead {
-  color: var(--muted);
-  max-width: 56ch;
-  font-size: 1.12rem;
-}
-
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: .18em;
-  font-size: .75rem;
-  color: var(--accent-hot);
-  margin-bottom: .6rem;
-}
-
-.cta-row {
-  display: flex;
-  gap: .8rem;
-  margin-top: 1.25rem;
-  flex-wrap: wrap;
-}
-
-.btn {
-  display: inline-block;
-  padding: .78rem 1.05rem;
-  border-radius: 999px;
-  border: 1px solid var(--accent-bright);
-  font-weight: 800;
-}
-
-.btn-primary {
-  background: linear-gradient(180deg, var(--accent-hot), var(--accent));
-  color: #181500;
-  box-shadow: 0 12px 30px rgba(255, 244, 96, .30);
-}
-.btn-primary:hover { filter: brightness(1.06); text-decoration: none; }
-
-.btn-outline {
-  color: var(--text);
-  background: rgba(255, 244, 96, .12);
-}
-
-.hero-image-wrap {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  display: grid;
-  place-items: center;
-  padding: 5.2rem 1rem 1.4rem;
-}
-.hero-image {
-  width: 100%;
-  height: 100%;
-  opacity: .52;
-  filter: saturate(120%) contrast(108%);
-}
-.contain-hero { object-fit: contain; }
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 50% 45%, rgba(255, 246, 90, 0.34), rgba(255, 246, 90, 0.10) 32%, transparent 62%),
-    linear-gradient(180deg, rgba(10, 9, 0, 0.52), rgba(10, 9, 0, 0.26) 46%, rgba(10, 9, 0, 0.72));
-}
-
-.grain {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(255, 246, 90, 0.14) 1px, transparent 1px);
-  background-size: 3px 3px;
-  mix-blend-mode: overlay;
-  pointer-events: none;
-}
-
-.section { padding: 4.2rem 0; }
-
-.section-alt {
-  background: linear-gradient(180deg, rgba(255, 244, 96, 0.16), rgba(255, 244, 96, 0.05));
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-.card {
-  background: linear-gradient(180deg, rgba(34, 29, 2, 0.95), rgba(20, 16, 1, 0.96));
-  border: 1px solid rgba(255, 244, 96, 0.5);
-  padding: 1.25rem;
-  border-radius: 14px;
-}
-
-.album-card {
-  display: grid;
-  grid-template-columns: minmax(150px, 210px) 1fr;
-  gap: 1rem;
-  align-items: center;
-}
-
-.album-thumb {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 244, 96, .55);
-  box-shadow: 0 14px 30px rgba(0,0,0,.36);
-  transition: transform .2s ease, filter .2s ease;
-}
-.album-link:hover .album-thumb {
-  transform: translateY(-3px) scale(1.01);
-  filter: saturate(1.1);
-}
-
-.text-link {
-  display: inline-block;
-  margin-top: .4rem;
-  font-weight: 700;
-}
-
-.tour-wrap {
-  margin-top: .9rem;
-  display: flex;
-  justify-content: center;
-}
-.tour-image {
-  width: min(100%, 640px); /* significantly smaller */
-  max-height: 65vh;
-  object-fit: contain;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 244, 96, .55);
-  box-shadow: 0 20px 42px rgba(0,0,0,.42);
-  transition: transform .2s ease;
-}
-.tour-image:hover { transform: translateY(-2px); }
-
-.contact-list {
-  margin: .7rem 0 0;
-  padding-left: 1.2rem;
-}
-
-.footer {
-  padding: 1.5rem;
-  text-align: center;
-  color: var(--muted);
-}
-
-@media (max-width: 900px) {
-  .hero-content { padding-top: 12vh; }
-  .album-card { grid-template-columns: 1fr; }
-  .tour-image { width: min(100%, 560px); max-height: 56vh; }
-}
-
-@media (max-width: 700px) {
-  .nav { padding: .75rem .95rem; }
-  .nav-links { gap: .65rem; font-size: .95rem; }
-
-  .section { padding: 3.3rem 0; }
-  .hero-content { padding-top: 10.5vh; padding-bottom: 3.6rem; }
-  .lead { font-size: 1rem; }
-
-  .hero-image-wrap { padding-top: 5.9rem; }
-  .tour-image { width: min(100%, 460px); max-height: 50vh; }
-}
+  <script src="script.js"></script>
+</body>
+</html>
